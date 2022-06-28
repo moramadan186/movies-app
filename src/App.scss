@@ -9,7 +9,7 @@
 }
 
 html {
-    font-size: 100%;
+    font-size: 90%;
 
     @include tablet {
         font-size: 80%;
@@ -30,6 +30,7 @@ body {
     @include mobile {
         margin-bottom: 3rem;
     }
+
     height: 2000px;
 }
 
@@ -62,7 +63,7 @@ iframe {
 }
 
 .container {
-    max-width: 1660px;
+    max-width: 1320px;
     margin: auto;
 }
 
