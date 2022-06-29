@@ -1,12 +1,12 @@
 @use "../../scss/"as *;
 
 .hero-slide {
-    margin-bottom: 3rem;
-
+    margin-bottom: 6rem;
 }
 
 .hero-slide__item {
     padding: 9rem 0 7rem;
+    min-height: 550px;
 
     @include mobile {
         padding: 10rem 0;

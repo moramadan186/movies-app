@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import "./modal.scss";
 
 const Modal = ({ id, active, children }) => {
-  console.log(children);
   return (
     <div id={id} className={`modal ${active ? "active" : ""}`}>
       {children}

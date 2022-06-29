@@ -17,7 +17,6 @@ const HeroSlide = () => {
         const response = await tmdbApi.getMoviesList(movieType.popular, {
           params,
         });
-        console.log(response.results);
         setMovieItems(response.results);
       } catch (error) {
         console.log(error);
@@ -59,36 +58,10 @@ const HeroSlideItem = ({ item, className }) => {
   const movie_background = apiConfig.originalImage(
     item.backdrop_path ? item.backdrop_path : item.poster_path
   );
-  const getMovieTrailerVideo = async () => {
-    console.log(item.id);
-    const currentModal = document.querySelector(`#modal_${item.id}`);
-    console.log(currentModal);
-    try {
-      const videos = await tmdbApi.getVideos(category.movie, item.id);
-      if (videos.results.length > 0) {
-        currentModal.querySelector(".modal__content").innerHTML = `
-          <iframe
-            width="100%"
-            height="500px"
-            title="trailer"
-            src="https://www.youtube.com/embed/${videos.results[0].key}"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        `;
-        currentModal.classList.toggle("active");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const setModalActive = async () => {
     const modal = document.querySelector(`#modal_${item.id}`);
-
     const videos = await tmdbApi.getVideos(category.movie, item.id);
-
     if (videos.results.length > 0) {
       const videSrc = "https://www.youtube.com/embed/" + videos.results[0].key;
       modal
