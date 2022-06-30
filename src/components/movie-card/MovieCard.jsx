@@ -3,8 +3,8 @@ import "./movie-card.scss";
 import { Link } from "react-router-dom";
 import apiConfig from "./../../api/apiConfig";
 import Button from "../button/Button";
-const MovieCard = ({ cate, item }) => {
-  const link = "/" + cate + "/" + item.id;
+const MovieCard = ({ category, item }) => {
+  const link = "/" + category + "/" + item.id;
   const bg = apiConfig.w500Image(item.poster_path || item.backdrop_path);
 
   return (
