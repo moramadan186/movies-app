@@ -1,15 +1,17 @@
 @use "../../scss/"as *;
 
 .hero-slide {
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
 }
 
 .hero-slide__item {
     padding: 9rem 0 7rem;
-    min-height: 550px;
+
+    min-height: 450px;
 
     @include mobile {
-        padding: 10rem 0;
+        max-height: 500px;
+        padding: 12rem 0 10rem;
     }
 
     width: 100%;
